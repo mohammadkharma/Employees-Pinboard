@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Employees-Pinboard/static/css/main.56a83de0.chunk.css",
+    "main.js": "/Employees-Pinboard/static/js/main.0f4dbe63.chunk.js",
+    "main.js.map": "/Employees-Pinboard/static/js/main.0f4dbe63.chunk.js.map",
+    "runtime-main.js": "/Employees-Pinboard/static/js/runtime-main.5d87a3cd.js",
+    "runtime-main.js.map": "/Employees-Pinboard/static/js/runtime-main.5d87a3cd.js.map",
+    "static/js/2.868993c3.chunk.js": "/Employees-Pinboard/static/js/2.868993c3.chunk.js",
+    "static/js/2.868993c3.chunk.js.map": "/Employees-Pinboard/static/js/2.868993c3.chunk.js.map",
+    "index.html": "/Employees-Pinboard/index.html",
+    "precache-manifest.c51f967070bc26076fe3276b64c92593.js": "/Employees-Pinboard/precache-manifest.c51f967070bc26076fe3276b64c92593.js",
+    "service-worker.js": "/Employees-Pinboard/service-worker.js",
+    "static/css/main.56a83de0.chunk.css.map": "/Employees-Pinboard/static/css/main.56a83de0.chunk.css.map",
+    "static/js/2.868993c3.chunk.js.LICENSE.txt": "/Employees-Pinboard/static/js/2.868993c3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5d87a3cd.js",
+    "static/js/2.868993c3.chunk.js",
+    "static/css/main.56a83de0.chunk.css",
+    "static/js/main.0f4dbe63.chunk.js"
+  ]
+}
