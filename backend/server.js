@@ -18,6 +18,12 @@ connection.once("open", () => {
   console.log("MongoDB connected successfully");
 });
 
+const pinsRouter = require("./routes/pins");
+const employeesRouter = require("./routes/employees");
+
+app.use("/pins", pinsRouter);
+app.use("/employees", employeesRouter);
+
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
