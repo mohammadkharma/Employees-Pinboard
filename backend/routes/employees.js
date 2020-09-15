@@ -9,7 +9,7 @@ router.route("/").get((req, res) => {
 
 router.route("/add").post((req, res) => {
   const employeeName = req.body.employeeName;
-  const newEmployee = new Employee(employeeName);
+  const newEmployee = new Employee({ employeeName });
 
   newEmployee
     .save()
