@@ -24,4 +24,26 @@ router.route("/add").post((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
+router.route("/:id").get((req, res) => {
+  Pin.findById(req.params.id)
+    .then((pin) => res.json(pin))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+router.route("/:id").delete((req, res) => {
+  Pin.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Pin deleted!"))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+router.route("/update/:id").post((req, res) => {
+  Pin.findById(req.params.id)
+    .then((pin) => {
+      pin.employeeName = req.body.employeeName;
+      pin.description = req.body.description;
+      pin.date = Date.parse(req.body.date);
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
 module.exports = router;
