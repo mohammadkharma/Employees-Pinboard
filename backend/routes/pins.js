@@ -42,6 +42,11 @@ router.route("/update/:id").post((req, res) => {
       pin.employeeName = req.body.employeeName;
       pin.description = req.body.description;
       pin.date = Date.parse(req.body.date);
+
+      pin
+        .save()
+        .then(() => res.json("Pin updated!"))
+        .catch((err) => res.status(400).json("Error: " + err));
     })
     .catch((err) => res.status(400).json("Error: " + err));
 });
