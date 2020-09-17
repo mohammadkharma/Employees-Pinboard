@@ -1,6 +1,5 @@
-import Axios from "axios";
 import React, { Component } from "react";
-// import axios from "axios";
+import axios from "axios";
 
 class CreateEmployee extends Component {
   constructor(props) {
@@ -29,7 +28,7 @@ class CreateEmployee extends Component {
 
     console.log(employee);
 
-    Axios.post("http://localhost:5000/employees/add", employee).then((res) => {
+    axios.post("http://localhost:5000/employees/add", employee).then((res) => {
       console.log(res.data);
     });
 

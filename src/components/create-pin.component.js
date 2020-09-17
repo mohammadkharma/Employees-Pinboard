@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import axios from "axios";
+import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -21,9 +21,13 @@ class CreatePin extends Component {
   }
 
   componentDidMount() {
-    this.setState({
-      employees: ["test employee"],
-      employeeName: "test employee",
+    axios.get("http://localhost:5000/employees/").then((res) => {
+      if (res.data.length > 0) {
+        this.setState({
+          employees: res.data.map((employee) => employee.employeeName),
+          employeeName: res.data[0].employeeName,
+        });
+      }
     });
   }
 
@@ -56,6 +60,10 @@ class CreatePin extends Component {
 
     console.log(pin);
 
+    axios.post("http://localhost:5000/pins/add", pin).then((res) => {
+      console.log(res.data);
+    });
+
     window.location = "/";
   }
 
@@ -68,7 +76,6 @@ class CreatePin extends Component {
           <div className="form-group">
             <label>EmployeeName: </label>
             <select
-              ref="employeeInput"
               required
               className="form-control"
               value={this.state.employeeName}
