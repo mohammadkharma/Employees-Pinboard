@@ -3,22 +3,24 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Pin = (props) => {
-  <tr>
-    <th>{props.pin.employeeName}</th>
-    <th>{props.pin.description}</th>
-    <th>{props.pin.date.substring(0, 10)}</th>
-    <th>
-      <Link to={"/edit/" + props.pin._id}>edit</Link> |
-      <a
-        href="#"
-        onClick={() => {
-          props.deletePin(props.pin._id);
-        }}
-      >
-        delete
-      </a>
-    </th>
-  </tr>;
+  return (
+    <tr>
+      <th>{props.pin.employeeName}</th>
+      <th>{props.pin.description}</th>
+      <th>{props.pin.date.substring(0, 10)}</th>
+      <th>
+        <Link to={"/edit/" + props.pin._id}>edit</Link> |
+        <a
+          href="/"
+          onClick={() => {
+            props.deletePin(props.pin._id);
+          }}
+        >
+          delete
+        </a>
+      </th>
+    </tr>
+  );
 };
 
 class PinsList extends Component {
@@ -45,7 +47,7 @@ class PinsList extends Component {
       .then((res) => console.log(res.data));
 
     this.setState({
-      pins: this.state.pins.filter((pin) => pin._id != id),
+      pins: this.state.pins.filter((pin) => pin._id !== id),
     });
   }
 
@@ -70,7 +72,7 @@ class PinsList extends Component {
               <th>Actions</th>
             </tr>
           </thead>
-          <tbody>{this.PinsList}</tbody>
+          <tbody>{this.pinsList()}</tbody>
         </table>
       </div>
     );
