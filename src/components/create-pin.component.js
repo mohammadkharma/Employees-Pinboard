@@ -62,7 +62,7 @@ class CreatePin extends Component {
   render() {
     return (
       <div>
-        <h3>Create New Pin Log</h3>
+        <h3>Create New Pin</h3>
 
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
@@ -105,7 +105,7 @@ class CreatePin extends Component {
           <div className="form-group">
             <input
               type="submit"
-              value="Create Pin Log"
+              value="Create Pin"
               className="btn btn-primary"
             />
           </div>
