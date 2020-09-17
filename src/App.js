@@ -12,12 +12,14 @@ import CreateEmployee from "./components/create-employee.component";
 function App() {
   return (
     <Router>
-      <Navbar />
-      <br />
-      <Route path="/" exact component={PinsList} />
-      <Route path="/edit/:id" exact component={EditPin} />
-      <Route path="/create" exact component={CreatePin} />
-      <Route path="/employee" exact component={CreateEmployee} />
+      <div className="container">
+        <Navbar />
+        <br />
+        <Route path="/" exact component={PinsList} />
+        <Route path="/edit/:id" exact component={EditPin} />
+        <Route path="/create" exact component={CreatePin} />
+        <Route path="/employee" exact component={CreateEmployee} />
+      </div>
     </Router>
   );
 }
